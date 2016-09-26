@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.MemberInfo = ViewData["MemberInfo"];
-    ViewBag.Title = "ViewMember";
+    ViewBag.Title = "ArtConspiracy | View Gallery";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,7 +13,7 @@ Location: @(ViewBag.MemberInfo.city), @(ViewBag.MemberInfo.state)
 {
     foreach (var item in ViewBag.MemberArt)
     {
-        <div style="float:left;margin-right:20px;margin-bottom:20px;border:solid 1px #cccccc;padding:15px;border-radius:5px;text-align:center;">
+        <div style="float:left;margin-right:20px;margin-bottom:20px;border:solid 1px #cccccc;padding:15px;border-radius:5px;text-align:center;width:300px;">
             @item.PieceTitle
             <br/>
             <a class="fancyboxImage" rel="gallery-image" href="@(item.imgURL)" target="_blank"><img src="@(item.imgURL)" style="max-width:250px;border-radius:3px;" border="0" /></a>
@@ -26,3 +26,10 @@ else
 {
     <span>@TempData["emptyMessage"].ToString()</span>
 }
+
+<div style="clear:both;">
+<br /><br />
+<a href="https://github.com/johndespirito/ArtConspiracy/blob/master/Controllers/ShowMembersController.cs" target="_blank" class="button">View ShowMembersController.cs on GitHub</a>
+<br /><br />
+<a href="https://github.com/johndespirito/ArtConspiracy/blob/master/Views/ShowMembers/ViewMember.cshtml" target="_blank" class="button">View ViewMember.cshtml on GitHub</a>
+</div>

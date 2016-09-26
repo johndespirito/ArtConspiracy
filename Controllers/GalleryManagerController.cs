@@ -56,9 +56,9 @@ namespace ArtConspiracy.Controllers
                     var fileName = Path.GetFileName(file.FileName);
                     var extension = Path.GetExtension(fileName);
 
-                    string path = @"C:\Users\John\Documents\Visual Studio 2015\Projects\ArtConspiracy\ArtConspiracy\ArtImages\" + User.Identity.GetUserId().ToString() + @"\" + pid.ToString() + extension;                 
+                    string path = @"C:\Inetpub\wwwroot\acdemo\ArtImages\" + User.Identity.GetUserId().ToString() + @"\" + pid.ToString() + extension;
                     string dbpath = "/ArtImages/" + User.Identity.GetUserId().ToString() + "/" + pid.ToString() + extension;
-                    string directory = @"C:\Users\John\Documents\Visual Studio 2015\Projects\ArtConspiracy\ArtConspiracy\ArtImages\" + User.Identity.GetUserId().ToString() + @"\";
+                    string directory = @"C:\Inetpub\wwwroot\acdemo\ArtImages\ArtImages\" + User.Identity.GetUserId().ToString() + @"\";
 
                     Directory.CreateDirectory(directory);
 
@@ -113,15 +113,15 @@ namespace ArtConspiracy.Controllers
                     var fileName = Path.GetFileName(file.FileName);
                     var extension = Path.GetExtension(fileName);
 
-                    string path = @"C:\Users\John\Documents\Visual Studio 2015\Projects\ArtConspiracy\ArtConspiracy\ArtImages\" + User.Identity.GetUserId().ToString() + @"\" + newartpiece.PID.ToString() + extension;
+                    string path = @"C:\Inetpub\wwwroot\acdemo\ArtImages\" + User.Identity.GetUserId().ToString() + @"\" + newartpiece.PID.ToString() + extension;
                     string dbpath = "/ArtImages/" + User.Identity.GetUserId().ToString() + "/" + newartpiece.PID.ToString() + extension;
-                    string directory = @"C:\Users\John\Documents\Visual Studio 2015\Projects\ArtConspiracy\ArtConspiracy\ArtImages\" + User.Identity.GetUserId().ToString() + @"\";
+                    string directory = @"C:\Inetpub\wwwroot\acdemo\ArtImages\" + User.Identity.GetUserId().ToString() + @"\";
 
                     Directory.CreateDirectory(directory);
 
                     file.SaveAs(path);
 
-                    
+
 
                     newArtPiece.imgURL = dbpath + "?ver=" + DateTime.Now.ToString("yyyyMMddHHmmss");
 

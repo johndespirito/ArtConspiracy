@@ -1,9 +1,14 @@
 ﻿@model ArtConspiracy.Models.AspNetUser
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ArtConspiracy | Account";
     Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
 }
 
 <h2>Welcome @User.Identity.Name!</h2>
+<p>Use the menu on the left to either edit your profile or manage your art gallery.</p>
+
+<br /><br />
+<a href="https://github.com/johndespirito/ArtConspiracy/blob/master/Views/Shared/_LayoutSidebar.cshtml" target="_blank" class="button">View _LayoutSidebar.cshtml on GitHub</a>
+
 
