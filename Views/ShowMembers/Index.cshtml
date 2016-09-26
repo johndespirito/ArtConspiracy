@@ -17,9 +17,13 @@
 {
     <tr>
         <td>@item.fullName</td>
-        <td>@item.joinDate</td>
+        <td>@item.joinDate.ToString("MMM dd yyyy")</td>
         <td align="center">@Html.ActionLink("View","ViewMember",new { id = item.Id }, new { @class = "button" })</td>
     </tr>
 }
     
 </table>
+<br/><br/>
+<a href="https://github.com/johndespirito/ArtConspiracy/blob/master/Controllers/ShowMembersController.cs" target="_blank" class="button">View ShowMembersController.cs on GitHub</a>
+<br /><br />
+<a href="https://github.com/johndespirito/ArtConspiracy/blob/master/Views/ShowMembers/Index.cshtml" target="_blank" class="button">View Index.cshtml on GitHub</a>
