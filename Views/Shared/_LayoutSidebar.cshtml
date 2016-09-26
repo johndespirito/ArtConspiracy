@@ -1,0 +1,26 @@
+﻿@RenderPage("~/Views/Shared/_Header.cshtml")
+
+<!-- Main -->
+<section class="wrapper style1">
+    <div class="container">
+        <div class="row 200%">
+
+            <!-- Sidebar content-->
+            @Html.Partial("~/Views/Account/_AccNav.cshtml")
+
+            <div class="8u  12u(narrower) important(narrower)">
+                <div id="content">
+
+                    <!-- Content -->
+
+                    <article>
+                        @RenderBody()
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@RenderPage("~/Views/Shared/_Footer.cshtml")

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f32acd7e6bfc40ee8188cc8feba1deb1" Name="Diagram1">
+        <EntityTypeShape EntityType="ArtConspiracyModel.ArtPiece" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtConspiracyModel.Comment" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ArtConspiracyModel.WrittenPiece" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ArtConspiracyModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ArtConspiracyModel.AspNetRole" Width="1.5" PointX="5.75" PointY="2.5" />
+        <EntityTypeShape EntityType="ArtConspiracyModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="3.625" />
+        <EntityTypeShape EntityType="ArtConspiracyModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="1" />
+        <EntityTypeShape EntityType="ArtConspiracyModel.AspNetUser" Width="1.5" PointX="8" PointY="1.125" />
+        <AssociationConnector Association="ArtConspiracyModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ArtConspiracyModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="ArtConspiracyModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

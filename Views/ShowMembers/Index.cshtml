@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ArtConspiracy.Models.AspNetUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Meet Our Artists</h2>
+
+<table cellpadding="2" cellspacing="2">
+    <tr>
+        <th>Member Name</th>
+        <th>Join Date</th>
+        <th>View Gallery</th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.fullName</td>
+        <td>@item.joinDate</td>
+        <td align="center">@Html.ActionLink("View","ViewMember",new { id = item.Id }, new { @class = "button" })</td>
+    </tr>
+}
+    
+</table>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.MemberInfo = ViewData["MemberInfo"];
+    ViewBag.Title = "ViewMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.MemberInfo.fullName</h2>
+<a href="mailto:@ViewBag.MemberInfo.UserName">@ViewBag.MemberInfo.UserName</a><br/>
+Location: @(ViewBag.MemberInfo.city), @(ViewBag.MemberInfo.state)
+<p>&nbsp;</p>
+<h3>Artwork</h3>
+@if(TempData["emptyMessage"] == null)
+{
+    foreach (var item in ViewBag.MemberArt)
+    {
+        <div style="float:left;margin-right:20px;margin-bottom:20px;border:solid 1px #cccccc;padding:15px;border-radius:5px;text-align:center;">
+            @item.PieceTitle
+            <br/>
+            <a class="fancyboxImage" rel="gallery-image" href="@(item.imgURL)" target="_blank"><img src="@(item.imgURL)" style="max-width:250px;border-radius:3px;" border="0" /></a>
+            <br/>
+            @item.PieceDesc
+        </div>
+    }
+}
+else
+{
+    <span>@TempData["emptyMessage"].ToString()</span>
+}

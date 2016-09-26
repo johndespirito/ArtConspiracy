@@ -1,0 +1,34 @@
+﻿@model ArtConspiracy.Models.AspNetUser
+
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
+}
+
+<h2>Edit Your Profile</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "", new { @class = "redtext" })
+    @Html.HiddenFor(model => model.Id)
+<div><b>Full Name</b></div>
+<div>
+    @Html.EditorFor(model => model.fullName)
+    @Html.ValidationMessageFor(model => model.fullName)
+</div>
+<div><b>City</b></div>
+<div>
+    @Html.EditorFor(model => model.city)
+    @Html.ValidationMessageFor(model => model.city)
+</div>
+<div><b>State</b></div>
+<div>
+    @Html.EditorFor(model => model.state)
+    @Html.ValidationMessageFor(model => model.state)
+</div>
+<p>
+    <br/>
+    <button type="submit" class="button large">Submit</button>
+</p>
+}
+

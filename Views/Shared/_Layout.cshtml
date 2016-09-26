@@ -1,0 +1,18 @@
+﻿@RenderPage("~/Views/Shared/_Header.cshtml")
+
+<!-- Main -->
+<section class="wrapper style1">
+    <div class="container" style="height:auto;overflow:hidden;">
+        <div id="content">
+
+            <!-- Content -->
+
+            <article>
+                @RenderBody()
+            </article>
+
+        </div>
+    </div>
+</section>
+
+@RenderPage("~/Views/Shared/_Footer.cshtml")

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ArtConspiracy.Models.ArtPiece>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
+}
+
+<h2>Gallery Manager</h2>
+
+@Html.ActionLink("Create New Gallery Item", "CreateGalleryItem", "", new { @class = "button" } )
+<br/>
+<br/>
+<table cellpadding="2" cellspacing="2">
+    <tr>
+        <th>Thumbnail</th>
+        <th>Title</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in ViewBag.GalleryItems)
+    {
+        <tr>
+            <td align="center" style="vertical-align:middle;"><img src="@item.imgURL" style="max-width:150px;border-radius:3px;" /></td>
+            <td align="center" style="vertical-align:middle;">@item.PieceTitle</td>
+            <td align="center" style="vertical-align:middle;">@Html.ActionLink("Edit", "EditGalleryItem", new { id = item.PID }, new { @class = "button" })</td>
+            <td align="center" style="vertical-align:middle;">@Html.ActionLink("Delete", "DeleteGalleryItem", new { id = item.PID }, new { @class = "button" })</td>
+        </tr>
+    }
+</table>
+
+
+

@@ -1,0 +1,17 @@
+﻿@model ArtConspiracy.Models.ArtPiece
+
+@{
+    ViewBag.Title = "DeleteGalleryItem";
+    Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
+}
+
+<h2>Are you sure you want to delete @(Model.PieceTitle)?</h2>
+
+<img src="@Model.imgURL" style="max-width:250px;" />
+<br/><br/>
+@using (Html.BeginForm())
+{
+    <button type="submit" value="Delete" class="button large">Delete</button> 
+    <button type="button" class="button" onclick="document.location = '/GalleryManager';">Cancel</button>
+}
+

@@ -1,0 +1,36 @@
+﻿@model ArtConspiracy.Models.ArtPiece
+
+@{
+    ViewBag.Title = "CreateGalleryItem";
+    Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
+}
+
+<h2>Create Gallery Item</h2>
+
+
+@using (Html.BeginForm("CreateGalleryItem","GalleryManager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.ValidationSummary(true, "", new { @class = "redtext" })
+
+    <div><b>Title</b></div>
+    <div>
+        @Html.EditorFor(model => model.PieceTitle)
+        @Html.ValidationMessageFor(model => model.PieceTitle)
+    </div>
+    <div><b>Description</b></div>
+    <div>
+        @Html.TextAreaFor(model => model.PieceDesc)
+        @Html.ValidationMessageFor(model => model.PieceDesc)
+    </div>
+    <div><b>Upload Image</b></div>
+    <div>
+        <input type="file" id="galleryImage" name="galleryImage" />
+    </div>
+    <p>
+        <br />
+        <button type="submit" class="button large">Submit</button>&nbsp;
+        <button type="button" class="button" onclick="document.location = '/GalleryManager';">Cancel</button>
+    </p>
+}
+
