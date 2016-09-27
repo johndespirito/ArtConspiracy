@@ -23,7 +23,7 @@ namespace ArtConspiracy.Models
 
         public string FullName { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
+        [HiddenInput]
         [Timestamp]
         public DateTime JoinDate { get; set; }
     }

@@ -246,9 +246,6 @@
     </Compile>
     <Compile Include="Models\LogInModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
-    <Compile Include="Models\WrittenPiece.cs">
-      <DependentUpon>ArtConspiracyEF.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

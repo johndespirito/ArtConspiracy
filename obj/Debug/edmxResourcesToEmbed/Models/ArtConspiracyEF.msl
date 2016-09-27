@@ -22,16 +22,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="WrittenPieces">
-      <EntityTypeMapping TypeName="ArtConspiracyModel.WrittenPiece">
-        <MappingFragment StoreEntitySet="WrittenPieces">
-          <ScalarProperty Name="PieceText" ColumnName="PieceText" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="MID" ColumnName="MID" />
-          <ScalarProperty Name="WID" ColumnName="WID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="GetMemberArt" FunctionName="ArtConspiracyModel.Store.GetMemberArt">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ArtConspiracyModel.GetMemberArt_Result">

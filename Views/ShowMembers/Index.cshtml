@@ -17,7 +17,7 @@
 {
     <tr>
         <td>@item.fullName</td>
-        <td>@item.joinDate.ToString("MMM dd yyyy")</td>
+        <td>@item.joinDate.ToString("MMM dd, yyyy")</td>
         <td align="center">@Html.ActionLink("View","ViewMember",new { id = item.Id }, new { @class = "button" })</td>
     </tr>
 }

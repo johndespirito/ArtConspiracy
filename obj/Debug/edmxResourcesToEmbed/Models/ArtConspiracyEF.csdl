@@ -22,7 +22,6 @@
   <EntityContainer Name="ArtConspiracyEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ArtPieces" EntityType="Self.ArtPiece" />
     <EntitySet Name="Comments" EntityType="Self.Comment" />
-    <EntitySet Name="WrittenPieces" EntityType="ArtConspiracyModel.WrittenPiece" />
     <FunctionImport Name="GetMemberArt" ReturnType="Collection(ArtConspiracyModel.GetMemberArt_Result)">
       <Parameter Name="MID" Mode="In" Type="String" />
     </FunctionImport>
@@ -44,17 +43,6 @@
       <End Role="AspNetUser" EntitySet="AspNetUsers" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="WrittenPiece">
-    <Key>
-      <PropertyRef Name="WID" />
-      <PropertyRef Name="MID" />
-      <PropertyRef Name="Title" />
-    </Key>
-    <Property Name="WID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="MID" Type="Int32" Nullable="false" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="PieceText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-  </EntityType>
   <ComplexType Name="GetMemberArt_Result">
     <Property Type="Int32" Name="PID" Nullable="false" />
     <Property Type="String" Name="MID" Nullable="true" MaxLength="128" />

@@ -102,7 +102,9 @@ namespace ArtConspiracy.Controllers
         [HttpGet]
         public ActionResult Register()
         {
-            return View();
+            RegisterModel defaultDate = new RegisterModel();
+            defaultDate.JoinDate = DateTime.Now;
+            return View(defaultDate);
         }
 
         [HttpPost]
@@ -119,7 +121,7 @@ namespace ArtConspiracy.Controllers
                 city = model.City,
                 state = model.State,
                 fullName = model.FullName,
-                joinDate = model.JoinDate
+                joinDate = DateTime.Now
             };
 
             var result = await userManager.CreateAsync(user, model.Password);

@@ -18,7 +18,7 @@
     <Property Name="MID" Type="nvarchar" MaxLength="128" />
     <Property Name="PieceTitle" Type="nvarchar" MaxLength="50" />
     <Property Name="PieceDesc" Type="nvarchar(max)" />
-    <Property Name="imgURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="imgURL" Type="nvarchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="AspNetRoles">
     <Key>
@@ -83,19 +83,6 @@
     <Property Name="MID" Type="int" />
     <Property Name="PID" Type="int" />
     <Property Name="Comment" Type="nvarchar(max)" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'ArtConspiracy.dbo.WrittenPieces' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="WrittenPieces">
-    <Key>
-      <PropertyRef Name="WID" />
-      <PropertyRef Name="MID" />
-      <PropertyRef Name="Title" />
-    </Key>
-    <Property Name="WID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MID" Type="int" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="PieceText" Type="text" />
   </EntityType>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -165,14 +152,6 @@ warning 6002: The table/view 'ArtConspiracy.dbo.WrittenPieces' does not have a p
     <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="WrittenPieces" EntityType="Self.WrittenPieces" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [WrittenPieces].[WID] AS [WID], 
-    [WrittenPieces].[MID] AS [MID], 
-    [WrittenPieces].[Title] AS [Title], 
-    [WrittenPieces].[PieceText] AS [PieceText]
-    FROM [dbo].[WrittenPieces] AS [WrittenPieces]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
